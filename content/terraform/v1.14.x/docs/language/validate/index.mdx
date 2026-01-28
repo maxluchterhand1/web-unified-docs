@@ -155,7 +155,7 @@ Use postconditions for guarantees that you need to verify after Terraform create
 
 Use the following considerations to help you decide between preconditions and postconditions:
 - Determine which block would most clearly report error messages. For example, if a resource has many dependencies, it can be pragmatic to declare one postcondition on that resource rather than preconditions on each dependency.
-- Determine whether the precondition and postcondition should you declare the same conditions. If your postcondition is in a different module from your precondition, it can be beneficial to have both, because each module verifies one another as each evolves independently.
+- Determine whether to use the precondition **and** postcondition should you declare the same conditions. If your postcondition is in a different module from your precondition, it can be beneficial to have both, because each module verifies one another as each evolves independently.
 
 ### Checks
 
