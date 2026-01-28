@@ -154,7 +154,7 @@ Use preconditions for assumptions that you want to verify before Terraform creat
 Use postconditions for guarantees that you need to verify after Terraform creates the resource or reads from the data source. For example, you may want to ensure that an `aws_instance` is launched in a network that assigns it a private DNS record. Use postconditions for guarantees to help future maintainers understand which behaviors they must preserve when changing configuration.
 
 Use the following considerations to help you decide between preconditions and postconditions:
-- Determine which block would most clearly report error messages. For example, if a resource has many dependencies, it can be pragmatic to declare one postcondition on that resource rather than preconditions on each dependency.
+- Determine which block would most clearly report error messages. For example, if a resource has many dependents, it can be pragmatic to declare one postcondition on that resource rather than preconditions on each dependent.
 - Determine whether the precondition and postcondition should you declare the same conditions. If your postcondition is in a different module from your precondition, it can be beneficial to have both, because each module verifies one another as each evolves independently.
 
 ### Checks
